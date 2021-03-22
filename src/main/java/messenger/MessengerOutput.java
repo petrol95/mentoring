@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
+ * Represents the class that contains data output methods
+ *
  * @author Olga Petrova
  */
 

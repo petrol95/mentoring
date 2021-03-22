@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Represents the class that contains data input methods
+ *
  * @author Olga Petrova
  */
 
@@ -15,18 +17,17 @@ public class MessengerInput {
     public static final String INPUT_FINISH_CONDITION = "*";
 
     private final BufferedReader bufferedReader;
-    private final Map<String, String> inputData;
 
     public MessengerInput(BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
-        inputData = new HashMap<>();
     }
 
     public Map<String, String> inputFromFile() throws IOException {
+        Map<String, String> inputData = new HashMap<>();
         String line;
         try {
             while ((line = bufferedReader.readLine()) != null) {
-                collectInputData(line);
+                collectInputData(line, inputData);
             }
         } finally {
             bufferedReader.close();
@@ -35,6 +36,7 @@ public class MessengerInput {
     }
 
     public Map<String, String> inputFromConsole() throws IOException {
+        Map<String, String> inputData = new HashMap<>();
         System.out.println("Please enter template parameters. Print asterisk on the new line to finish");
         try {
             while (true) {
@@ -42,7 +44,7 @@ public class MessengerInput {
                 if (line.contains(INPUT_FINISH_CONDITION)) {
                     break;
                 }
-                collectInputData(line);
+                collectInputData(line, inputData);
             }
         } finally {
             bufferedReader.close();
@@ -50,12 +52,8 @@ public class MessengerInput {
         return inputData;
     }
 
-    public void collectInputData(String line) {
+    public void collectInputData(String line, Map<String, String> inputData) {
         String[] data = line.split(SPACE_EXPRESSION);
         inputData.put(data[0], data[1]);
-    }
-
-    public Map<String, String> getInputData() {
-        return inputData;
     }
 }
