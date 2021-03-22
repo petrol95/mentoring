@@ -1,0 +1,3 @@
+Dear Anna,
+we would like to inform you about our meeting on 12.09.2020.
+Please see #{meet} for more information.

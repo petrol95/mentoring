@@ -1,0 +1,3 @@
+Dear #{username},
+we would like to inform you about our #{event} on #{eventDate}.
+Please see #{tag} for more information.

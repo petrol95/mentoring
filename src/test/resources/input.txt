@@ -1,0 +1,5 @@
+username Max
+event meeting
+eventDate 12.09.2020
+tag #{meet}
+service none

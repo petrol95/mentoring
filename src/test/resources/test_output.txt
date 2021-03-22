@@ -1,0 +1,2 @@
+Test method: shouldWriteTestResultToFile()
+Result: passed
